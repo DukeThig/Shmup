@@ -92,8 +92,5 @@ if(x &lt;= 390) instance_destroy();
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>9,1</point>
-    <point>9,9</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>
