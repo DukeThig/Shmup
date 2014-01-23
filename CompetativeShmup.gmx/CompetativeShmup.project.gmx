@@ -17,6 +17,7 @@
     </sprites>
     <sprites name="Enemy">
       <sprite>sprites\spr_Pop1</sprite>
+      <sprite>sprites\spr_AttackLauncher</sprite>
     </sprites>
     <sprites name="Utility">
       <sprite>sprites\spr_Button1</sprite>
@@ -52,11 +53,14 @@
     <objects name="Enemies">
       <object>objects\obj_EnemyParent</object>
       <object>objects\obj_EnemyPop1</object>
-      <object>objects\obj_EnemyPop2</object>
+      <object>objects\obj_EnemyAttackLauncher</object>
     </objects>
     <objects name="Utlity">
       <object>objects\obj_Button1</object>
       <object>objects\waitTimer</object>
+    </objects>
+    <objects name="Player Attacks">
+      <object>objects\obj_Ship1Basic</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>mirror = 0; //equals moving right, 1 equals moving left
 right = 0; //means on the left screen, 1 means on the right screen
-vspeed = 2.5;
+vspeed = 5.0;
 HP = 1;
 </string>
           </argument>
@@ -150,7 +150,7 @@ if(alarm[0] == -1) alarm[0] = 10;    //scattered single shots
 if(alarm[1] == -1) alarm[1] = 110;  //3 spread shot
 
 if(vspeed&gt;0)
-{vspeed = vspeed-.03}
+{vspeed = vspeed-.08}
 else if(vspeed&lt;0)
 {vspeed = 0}
 </string>
