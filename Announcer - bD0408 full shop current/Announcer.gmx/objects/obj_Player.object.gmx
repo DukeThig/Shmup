@@ -360,6 +360,7 @@ if (invulnerable == 0)
             <kind>1</kind>
             <string>if(alarm[0] = -1) alarm[0] = PLAYER_SHOTSPEED;   //Basic shot alarm
 if(alarm[1] = -1) alarm[1] = PLAYER_SHOTSPEED - PLAYER_WAVESHOTSPEED; //Wave Shot Alarm
+
 </string>
           </argument>
         </arguments>
@@ -518,5 +519,8 @@ if (teleportAble = 1 and HASTELEPORTER = 1)
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>50,50</point>
+    <point>50,50</point>
+  </PhysicsShapePoints>
 </object>

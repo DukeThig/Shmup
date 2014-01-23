@@ -1,0 +1,2 @@
+In the enemy type that releases the basic attack, set the appropriate player object's alarm 1 to the time between hitting the
+enemy and releasing the attack.

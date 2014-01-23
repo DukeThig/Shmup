@@ -35,6 +35,12 @@ globalvar PLAYER2_SPEED;
 globalvar PLAYER2_SHOTSPEED;
 globalvar PLAYER2_HP;
 
+globalvar SHIP_TYPE;
+globalvar WEAPON_TYPE;
+globalvar HULL_TYPE;
+globalvar ITEM_ONE;
+globalvar ITEM_TWO;
+
 globalvar DIAGONAL_SPEED;
 
 PLAYER1_SPEED = 5;
@@ -46,6 +52,14 @@ PLAYER2_SHOTSPEED = 10;
 PLAYER2_HP = 3;
 
 DIAGONAL_SPEED = 5*.707;
+
+//Code below is intializing the player customization variables (choices in hangar)
+SHIP_TYPE = 1;
+WEAPON_TYPE = "direct";
+HULL_TYPE = "mobile";
+ITEM_ONE = 1;
+ITEM_TWO = 1;
+
 
 room_goto(rm_Level1);
 </string>
@@ -65,5 +79,8 @@ room_goto(rm_Level1);
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>48,16</point>
+    <point>48,48</point>
+  </PhysicsShapePoints>
 </object>
