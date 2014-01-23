@@ -23,9 +23,7 @@
     
     //Used to save progress for SP continues.
     globalvar gameLoop;             // Tells which replay loop of the single player game the player is on. 
-    globalvar spStageProgress;       // Holds the furthest stage the player has gotten to in sp on their current game loop. (May/mayNot be used)
-    
-    run = scr_readProfile();</code>
+    globalvar spStageProgress;       // Holds the furthest stage the player has gotten to in sp on their current game loop. (May/mayNot be used)</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>

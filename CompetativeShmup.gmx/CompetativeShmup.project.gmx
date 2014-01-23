@@ -30,6 +30,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_readProfile.gml</script>
+    <script>scripts\scr_initialCheck.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">
