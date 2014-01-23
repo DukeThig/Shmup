@@ -28,6 +28,8 @@
             <string>moveLock1 = 0;
 invulnerable1 = 0;
 powerLevel = 1;
+
+meter = 0;
 </string>
           </argument>
         </arguments>
@@ -296,12 +298,18 @@ if(PLAYER1_HP &lt;= 0)
     //CALL SCRIPT FOR DEATH
 }
 
+/*******************************************************
+This code handles player death
+*********************************************************/
+if(meter &gt; 300)
+{meter = 300;}
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="16">
+    <event eventtype="5" enumb="90">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -385,6 +393,28 @@ else if(SHIP_TYPE = 8)
 
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>  </string>
           </argument>
         </arguments>
       </action>

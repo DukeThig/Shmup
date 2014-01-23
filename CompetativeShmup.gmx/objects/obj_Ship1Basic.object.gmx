@@ -82,13 +82,16 @@ shot1.speed = 2;
 shot2.speed = 2;
 shot3.speed = 2;
 
-if(right = 0)
+if(right == 0)
 {
     shot1.direction = point_direction(x, y, obj_Player1.x, obj_Player1.y);
 }
 else
 {
     shot1.direction = point_direction(x, y, obj_Player2.x, obj_Player2.y);
+    shot1.right = 1;
+    shot2.right = 1;
+    shot3.right = 1;
 }
 
 shot2.direction = shot1.direction + 10;
@@ -152,7 +155,7 @@ if(right = 1)
             <kind>1</kind>
             <string>if(HP &lt;= 0) instance_destroy();
 
-if(right = 0)
+if(right == 0)
 {
     if(x &gt;= room_width - 696) instance_destroy();
     if(x &lt;= 116) instance_destroy();
