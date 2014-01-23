@@ -1,2 +1,7 @@
-In the enemy type that releases the basic attack, set the appropriate player object's alarm 1 to the time between hitting the
+**In the enemy type that releases the basic attack, set the appropriate player object's alarm 1 to the time between hitting the
 enemy and releasing the attack.
+
+**As we add ship/item type names be sure to update the readProfile script's comments with their actual code names so we don't lose which array
+slot is which.
+
+**BUG** If you are hit by a bullet while the enemy who shot the bullet is still alive the game crashes

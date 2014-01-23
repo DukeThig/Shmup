@@ -6,11 +6,26 @@
   <vsnap>32</vsnap>
   <hsnap>32</hsnap>
   <isometric>0</isometric>
-  <speed>60</speed>
+  <speed>30</speed>
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>// Declarations of all the items read in from the profile. 
+
+    //Unlocks for mp
+    globalvar shipUnlockArray;      // Array to hold the locked/unlocked status of any game ships in multiplayer 
+                                    /* [0]-ShipA [1]-ShipB, etc */
+                                    
+    globalvar shipExpArray;         // Array to hold how much mp experience someone has with a ship.
+                                    /* [0]-ShipA [1]-ShipB, etc */
+                                    
+    globalvar itemArray;            // Array to hold the locked/unlocked status of any game items
+    
+    //Used to save progress for SP continues.
+    globalvar gameLoop;             // Tells which replay loop of the single player game the player is on. 
+    globalvar spStageProgress;       // Holds the furthest stage the player has gotten to in sp on their current game loop. (May/mayNot be used)
+    
+    run = scr_readProfile();</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>
@@ -30,7 +45,7 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="loadingScreen" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="-1"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -40,7 +55,7 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -50,7 +65,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_Button1" x="608" y="416" name="inst_C6CE85BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waitTimer" x="512" y="288" name="inst_34D12FB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Y/N check list of ships the player has.
+            <string>// Reads in the saved .ini file to see which ships have been unlocked.
 </string>
           </argument>
         </arguments>

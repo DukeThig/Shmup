@@ -24,8 +24,12 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_Test</background>
+    <background>background\loadingScreen</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_readProfile.gml</script>
+  </scripts>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_Player1</object>
@@ -52,12 +56,14 @@
     </objects>
     <objects name="Utlity">
       <object>objects\obj_Button1</object>
-      <object>objects\playerProfile</object>
+      <object>objects\waitTimer</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_pregameLoading</room>
     <room>rooms\rm_Menu</room>
     <room>rooms\rm_Level1</room>
+    <room>rooms\rm_Hangar</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
