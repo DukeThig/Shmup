@@ -52,6 +52,7 @@
     </objects>
     <objects name="Utlity">
       <object>objects\obj_Button1</object>
+      <object>objects\playerProfile</object>
     </objects>
   </objects>
   <rooms name="rooms">
