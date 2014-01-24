@@ -29,7 +29,101 @@
 invulnerable1 = 0;
 powerLevel = 1;
 
-meter = 0;
+meter = 300;
+charge = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>tempSpawn = instance_create(710, 15, obj_DroneLevel1);
+tempSpawn.right = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*******************************************************
+Alarm 3 corresponds to the players Level 2 charge attack
+*********************************************************/
+
+tempSpawn = instance_create(700, (100+irandom(200)), obj_DroneLevel2);
+tempSpawn.right = 1;
+
+tempSpawn2 = instance_create(1160, 250+irandom(200), obj_DroneLevel2);
+tempSpawn2.right = 1;
+tempSpawn2.mirror = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*******************************************************
+Alarm 2 corresponds to the players Level 1 charge attack
+*********************************************************/
+
+n = irandom(1);
+
+if(n==0)
+{tempSpawn = instance_create(700, 10, obj_DroneLevel1);}
+else
+{
+    tempSpawn = instance_create(1160, 10, obj_DroneLevel1);
+    tempSpawn.mirror = 1;
+}
+
+tempSpawn.right = 1;
 </string>
           </argument>
         </arguments>
@@ -63,7 +157,7 @@ alarm is called when certain enemy units are killed.
 if(SHIP_TYPE = 1)
 {
    tempx = (random(416) + 704);
-   tempSpawn = instance_create(tempx, 20, obj_Ship1Basic);
+   tempSpawn = instance_create(tempx, 20, obj_DroneBasic);
    tempSpawn.right = 1;
 }
 else if(SHIP_TYPE == 2)
@@ -299,11 +393,43 @@ if(PLAYER1_HP &lt;= 0)
 }
 
 /*******************************************************
-This code handles player death
+This code handles capping the meter variable at 300
 *********************************************************/
 if(meter &gt; 300)
 {meter = 300;}
 
+/*******************************************************
+The following code block handles the charge meter. Each
+if block represents a different level of charge. Animations
+for the charge attacks being unleashed should be called 
+here.
+*********************************************************/
+
+if keyboard_check(vk_shift)
+{
+    if charge&lt;meter
+    {charge+=.5;}
+}
+     
+if keyboard_check_released(vk_shift)
+{
+  if(charge == 300)
+  {alarm[4] = 10;
+    meter = 0;}
+  else if(charge&gt;200)
+  {alarm[3] = 10;
+    meter = meter-200;}
+  else if(charge&gt;100)
+  {alarm[2] = 10;
+    meter = meter-100;}
+  else
+  {
+    
+  }
+  
+  charge = 0;
+  
+}
 </string>
           </argument>
         </arguments>
@@ -397,7 +523,7 @@ else if(SHIP_TYPE = 8)
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="16">
+    <event eventtype="9" enumb="87">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -414,7 +540,54 @@ else if(SHIP_TYPE = 8)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>alarm[2] = 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[1] = 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="69">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[3] = 10;
+</string>
           </argument>
         </arguments>
       </action>

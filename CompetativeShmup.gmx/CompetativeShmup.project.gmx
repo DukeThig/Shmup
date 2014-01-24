@@ -69,7 +69,9 @@
       <object>objects\waitTimer</object>
     </objects>
     <objects name="Player Attacks">
-      <object>objects\obj_Ship1Basic</object>
+      <object>objects\obj_DroneBasic</object>
+      <object>objects\obj_DroneLevel1</object>
+      <object>objects\obj_DroneLevel2</object>
     </objects>
     <objects name="Menu Buttons">
       <object>objects\btn_singlePlayerStart</object>
