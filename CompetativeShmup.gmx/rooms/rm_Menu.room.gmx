@@ -30,7 +30,7 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="spaceStars" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="12" stretch="0"/>
+    <background visible="-1" foreground="0" name="spaceStars" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="8" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -51,7 +51,10 @@
   </views>
   <instances>
     <instance objName="obj_Button1" x="608" y="416" name="inst_C6CE85BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="btn_singlePlayerStart" x="320" y="320" name="inst_3B455DD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="btn_singlePlayerStart" x="288" y="320" name="inst_234CB700" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="btn_multiplayerStart" x="288" y="384" name="inst_75BBCCB9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="btn_optionsStart" x="288" y="448" name="inst_31FCB87D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="btn_exitStart" x="288" y="512" name="inst_006C071F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

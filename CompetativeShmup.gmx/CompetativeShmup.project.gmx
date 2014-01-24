@@ -24,6 +24,9 @@
     </sprites>
     <sprites name="Special Font Text">
       <sprite>sprites\spr_singlePlayer</sprite>
+      <sprite>sprites\spr_multiplayer</sprite>
+      <sprite>sprites\spr_options</sprite>
+      <sprite>sprites\spr_exit</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -71,6 +74,9 @@
     <objects name="Menu Buttons">
       <object>objects\btn_singlePlayerStart</object>
       <object>objects\obj_Button1</object>
+      <object>objects\btn_multiplayerStart</object>
+      <object>objects\btn_optionsStart</object>
+      <object>objects\btn_exitStart</object>
     </objects>
   </objects>
   <rooms name="rooms">
