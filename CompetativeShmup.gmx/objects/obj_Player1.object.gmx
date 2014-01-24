@@ -53,8 +53,14 @@ charge = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>tempSpawn = instance_create(710, 15, obj_DroneLevel1);
+            <string>/*******************************************************
+Alarm 3 corresponds to the players Level 2 charge attack
+*********************************************************/
+
+tempSpawn = instance_create(700, 100, obj_DroneLevel3);
 tempSpawn.right = 1;
+
+
 </string>
           </argument>
         </arguments>
@@ -541,6 +547,29 @@ else if(SHIP_TYPE = 8)
           <argument>
             <kind>1</kind>
             <string>alarm[2] = 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[4] = 10;
 </string>
           </argument>
         </arguments>
