@@ -22,15 +22,21 @@
     <sprites name="Utility">
       <sprite>sprites\spr_Button1</sprite>
     </sprites>
+    <sprites name="Special Font Text">
+      <sprite>sprites\spr_singlePlayer</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_Test</background>
     <background>background\loadingScreen</background>
+    <background>background\spaceStars</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_readProfile.gml</script>
-    <script>scripts\scr_initialCheck.gml</script>
+    <scripts name="Save Data Management">
+      <script>scripts\scr_initialCheck.gml</script>
+      <script>scripts\scr_readProfile.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Player">
@@ -57,11 +63,14 @@
       <object>objects\obj_EnemyAttackLauncher</object>
     </objects>
     <objects name="Utlity">
-      <object>objects\obj_Button1</object>
       <object>objects\waitTimer</object>
     </objects>
     <objects name="Player Attacks">
       <object>objects\obj_Ship1Basic</object>
+    </objects>
+    <objects name="Menu Buttons">
+      <object>objects\btn_singlePlayerStart</object>
+      <object>objects\obj_Button1</object>
     </objects>
   </objects>
   <rooms name="rooms">
