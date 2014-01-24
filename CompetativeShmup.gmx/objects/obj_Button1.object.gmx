@@ -55,7 +55,7 @@ PLAYER2_HP = 3;
 DIAGONAL_SPEED = 5*.707;
 
 //Code below is intializing the player customization variables (choices in hangar)
-SHIP_TYPE = 1;
+SHIP_TYPE = 2;
 WEAPON_TYPE = "direct";
 HULL_TYPE = "mobile";
 ITEM_ONE = 1;
