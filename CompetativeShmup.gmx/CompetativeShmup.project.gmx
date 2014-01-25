@@ -10,11 +10,21 @@
     <sprites name="Player">
       <sprite>sprites\spr_Player1</sprite>
       <sprite>sprites\spr_drone</sprite>
+      <sprite>sprites\spr_PlayerHolder</sprite>
     </sprites>
     <sprites name="Projectiles">
       <sprite>sprites\spr_Bullet1</sprite>
-      <sprite>sprites\spr_EBullet1</sprite>
-      <sprite>sprites\spr_Bullet2</sprite>
+      <sprite>sprites\spr_smallBullet1</sprite>
+      <sprite>sprites\spr_smallBullet2</sprite>
+      <sprite>sprites\spr_smallBullet3</sprite>
+      <sprite>sprites\spr_smallBullet4</sprite>
+      <sprite>sprites\spr_smallBullet5</sprite>
+      <sprite>sprites\spr_mediumBullet1</sprite>
+      <sprite>sprites\spr_mediumBullet2</sprite>
+      <sprite>sprites\spr_mediumBullet3</sprite>
+      <sprite>sprites\spr_mediumBullet4</sprite>
+      <sprite>sprites\spr_mediumBullet5</sprite>
+      <sprite>sprites\spr_largeBullet1</sprite>
     </sprites>
     <sprites name="Enemy">
       <sprite>sprites\spr_Pop1</sprite>
@@ -29,13 +39,20 @@
       <sprite>sprites\spr_options</sprite>
       <sprite>sprites\spr_exit</sprite>
     </sprites>
+    <sprites name="Boss Attacks">
+      <sprite>sprites\spr_DroneBoss</sprite>
+      <sprite>sprites\spr_DroneBosshelper</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_Test</background>
     <background>background\loadingScreen</background>
     <background>background\spaceStars</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pth_DroneLevel3Helper1</path>
+    <path>paths\pth_DroneLevel3Helper2</path>
+  </paths>
   <scripts name="scripts">
     <scripts name="Save Data Management">
       <script>scripts\scr_initialCheck.gml</script>
@@ -57,8 +74,18 @@
         <object>objects\obj_P2Bullet1</object>
       </objects>
       <objects name="Enemy">
-        <object>objects\obj_EnemyBullet1</object>
-        <object>objects\obj_EnemyBullet2</object>
+        <object>objects\obj_smallBullet1</object>
+        <object>objects\obj_mediumAccellerating1</object>
+        <object>objects\obj_smallBullet2</object>
+        <object>objects\obj_smallBullet3</object>
+        <object>objects\obj_smallBullet4</object>
+        <object>objects\obj_smallBullet5</object>
+        <object>objects\obj_mediumBullet1</object>
+        <object>objects\obj_mediumBullet2</object>
+        <object>objects\obj_mediumBullet3</object>
+        <object>objects\obj_mediumBullet4</object>
+        <object>objects\obj_mediumBullet5</object>
+        <object>objects\obj_largeBullet1</object>
       </objects>
     </objects>
     <objects name="Enemies">
@@ -74,6 +101,9 @@
       <object>objects\obj_DroneLevel1</object>
       <object>objects\obj_DroneLevel2</object>
       <object>objects\obj_DroneLevel3</object>
+      <object>objects\obj_DroneLevel3Helper1</object>
+      <object>objects\obj_DroneLevel3Helper2</object>
+      <object>objects\obj_DroneLevel3Helper3</object>
     </objects>
     <objects name="Menu Buttons">
       <object>objects\btn_singlePlayerStart</object>

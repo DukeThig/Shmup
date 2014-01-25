@@ -84,7 +84,33 @@ rightStream.direction = 90;
 //-------------------------------------------------------------------
 if(moveLock2 == 0)
 {
-  /*  LR = 0;
+
+    LR = 0;
+    UD = 0;
+    
+    if (keyboard_check(vk_left)) LR = "L";
+    else if (keyboard_check(vk_right)) LR = "R";
+    
+    if (keyboard_check(vk_up)) UD = "U";
+    else if (keyboard_check(vk_down)) UD = "D";    
+    
+    switch (string(LR)+string(UD))
+        {
+        case "00": break;
+        
+        case "L0": x -= PLAYER1_SPEED; break;
+        case "R0": x += PLAYER1_SPEED; break;
+        case "0U": y -= PLAYER1_SPEED; break;
+        case "0D": y += PLAYER1_SPEED; break;
+        
+        case "LU": x -= DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
+        case "RU": x += DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
+        case "LD": x -= DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
+        case "RD": x += DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
+        }
+        
+/*
+    LR = 0;
     UD = 0;
     
     if (joystick_direction(1) == vk_numpad4) LR = "L";
@@ -107,7 +133,7 @@ if(moveLock2 == 0)
         case "LD": x -= DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
         case "RD": x += DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
         }
-     */   
+       */ 
        switch (joystick_direction(2))
        {
            case vk_numpad1: x -= DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;

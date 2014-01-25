@@ -54,7 +54,7 @@ dir2 = 75;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shot = instance_create(x, y, obj_EnemyBullet2);
+            <string>shot = instance_create(x, y, obj_smallBullet2);
 shot.right = 1;
 shot.direction = dir2;
 shot.speed = 1.8;
@@ -81,7 +81,7 @@ dir2 = dir2 - 13;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shot = instance_create(x, y, obj_EnemyBullet1);
+            <string>shot = instance_create(x, y, obj_smallBullet1);
 shot.right = 1;
 shot.direction = dir;
 shot.speed = 1.8;
