@@ -9,8 +9,12 @@
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_Player1</sprite>
-      <sprite>sprites\spr_drone</sprite>
       <sprite>sprites\spr_PlayerHolder</sprite>
+      <sprites name="Drone">
+        <sprite>sprites\spr_drone</sprite>
+        <sprite>sprites\spr_droneAnimLeft</sprite>
+        <sprite>sprites\spr_droneAnimRight</sprite>
+      </sprites>
     </sprites>
     <sprites name="Projectiles">
       <sprite>sprites\spr_Bullet1</sprite>

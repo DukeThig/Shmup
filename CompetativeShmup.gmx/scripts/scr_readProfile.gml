@@ -3,21 +3,21 @@
         
         /*******************************************************
          shipUnlockArray documentation (holds locked/unlocked)
-            [0]- Swift
+            [0]- Drone
             [1]- Guardian
             [2]- Royal
         *********************************************************/
-        shipUnlockArray[0] = ini_read_string("Ship", "Sprint", "Locked");
+        shipUnlockArray[0] = ini_read_string("Ship", "Drone", "Locked");
         shipUnlockArray[1] = ini_read_string("Ship", "Guardian", "Locked");
         shipUnlockArray[2] = ini_read_string("Ship", "Royal", "Locked");
         
         /*******************************************************
          shipExpArray documentation (holds amt of exp per ship)
-            [0]- Swift
+            [0]- Drone
             [1]- Guardian
             [2]- Royal
         *********************************************************/
-        shipExpArray[0] = ini_read_real("ShipExp", "Sprint", 0);
+        shipExpArray[0] = ini_read_real("ShipExp", "Drone", 0);
         shipExpArray[1] = ini_read_real("ShipExp", "Guardian", 0);
         shipExpArray[2] = ini_read_real("ShipExp", "Royal", 0);
         

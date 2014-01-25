@@ -8,21 +8,21 @@ else
         
         /*******************************************************
          shipUnlockArray documentation (holds locked/unlocked)
-            [0]- Swift
+            [0]- Drone
             [1]- Guardian
             [2]- Royal
         *********************************************************/
-        ini_write_string("Ship", "Sprint", "Locked");
+        ini_write_string("Ship", "Drone", "Locked");
         ini_write_string("Ship", "Guardian", "Locked");
         ini_write_string("Ship", "Royal", "Locked");
         
         /*******************************************************
          shipExpArray documentation (holds amt of exp per ship)
-            [0]- Swift
+            [0]- Drone
             [1]- Guardian
             [2]- Royal
         *********************************************************/
-        ini_write_real("ShipExp", "Sprint", 0);
+        ini_write_real("ShipExp", "Drone", 0);
         ini_write_real("ShipExp", "Guardian", 0);
         ini_write_real("ShipExp", "Royal", 0);
         
