@@ -30,19 +30,22 @@
 globalvar PLAYER1_SPEED;
 globalvar PLAYER1_SHOTSPEED;
 globalvar PLAYER1_HP;
+globalvar PLAYER1_SHIP_TYPE;
+globalvar PLAYER1_WEAPON_TYPE;
+globalvar PLAYER1_HULL_TYPE;
+globalvar PLAYER1_ITEM_ONE;
+globalvar PLAYER1_ITEM_TWO;
 
 globalvar PLAYER2_SPEED;
 globalvar PLAYER2_SHOTSPEED;
 globalvar PLAYER2_HP;
-
-globalvar SHIP_TYPE;
-globalvar WEAPON_TYPE;
-globalvar HULL_TYPE;
-globalvar ITEM_ONE;
-globalvar ITEM_TWO;
+globalvar PLAYER2_SHIP_TYPE;
+globalvar PLAYER2_WEAPON_TYPE;
+globalvar PLAYER2_HULL_TYPE;
+globalvar PLAYER2_ITEM_ONE;
+globalvar PLAYER2_ITEM_TWO;
 
 globalvar DIAGONAL_SPEED;
-
 
 PLAYER1_SPEED = 5;
 PLAYER1_SHOTSPEED = 10;
@@ -55,11 +58,17 @@ PLAYER2_HP = 3;
 DIAGONAL_SPEED = 5*.707;
 
 //Code below is intializing the player customization variables (choices in hangar)
-SHIP_TYPE = 1;
-WEAPON_TYPE = "direct";
-HULL_TYPE = "mobile";
-ITEM_ONE = 1;
-ITEM_TWO = 1;
+PLAYER1_SHIP_TYPE = 1;
+PLAYER1_WEAPON_TYPE = "direct";
+PLAYER1_HULL_TYPE = "mobile";
+PLAYER1_ITEM_ONE = 1;
+PLAYER1_ITEM_TWO = 1;
+
+PLAYER2_SHIP_TYPE = 1;
+PLAYER2_WEAPON_TYPE = "direct";
+PLAYER2_HULL_TYPE = "mobile";
+PLAYER2_ITEM_ONE = 1;
+PLAYER2_ITEM_TWO = 1;
 
 
 room_goto(rm_Level1);

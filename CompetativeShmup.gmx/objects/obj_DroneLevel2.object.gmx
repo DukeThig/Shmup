@@ -55,10 +55,12 @@ dir2 = 75;
           <argument>
             <kind>1</kind>
             <string>shot = instance_create(x, y, obj_smallBullet2);
-shot.right = 1;
 shot.direction = dir2;
 shot.speed = 1.8;
 dir2 = dir2 - 13;
+
+if(right == 1)
+{shot.right = 1;}
 </string>
           </argument>
         </arguments>
@@ -82,10 +84,12 @@ dir2 = dir2 - 13;
           <argument>
             <kind>1</kind>
             <string>shot = instance_create(x, y, obj_smallBullet1);
-shot.right = 1;
 shot.direction = dir;
 shot.speed = 1.8;
 dir = dir - 13;
+
+if(right == 1)
+{shot.right = 1;}
 </string>
           </argument>
         </arguments>

@@ -55,24 +55,28 @@ xx = 0;
           <argument>
             <kind>1</kind>
             <string>shot = instance_create(x, y, obj_mediumAccellerating1);
-shot.right = 1;
 shot.direction = 270;
 shot.speed = .5;
 
 shot2 = instance_create(x, y, obj_mediumAccellerating1);
-shot2.right = 1;
 shot2.direction = 270;
 shot2.speed = 1;
 
 shot3 = instance_create(x, y, obj_mediumAccellerating1);
-shot3.right = 1;
 shot3.direction = 270;
 shot3.speed = 1.5;
 
 shot4 = instance_create(x, y, obj_mediumAccellerating1);
-shot4.right = 1;
 shot4.direction = 270;
 shot4.speed = 2;
+
+if(right == 1)
+{
+    shot.right = 1;
+    shot2.right = 1;
+    shot3.right = 1;
+    shot4.right = 1;
+}
 </string>
           </argument>
         </arguments>

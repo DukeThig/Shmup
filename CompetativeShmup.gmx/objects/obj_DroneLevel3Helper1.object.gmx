@@ -89,10 +89,18 @@ HP = 1;
 for(i = 0; i &lt;8; i+= 1)
 {
     shot = instance_create(x, y+5, obj_mediumBullet2);
-    shot.direction = point_direction(x, y, obj_Player2.x, obj_Player2.y);
-    shot.right = 1;
     shot.speed = shotSpeed;
     shotSpeed = shotSpeed + .4;
+    
+    if(right == 1)
+    {
+        shot.right = 1;
+        shot.direction = point_direction(x, y, obj_Player2.x, obj_Player2.y);
+    }
+    else
+    {
+        shot.direction = point_direction(x, y, obj_Player1.x, obj_Player1.y);
+    }
 }
 </string>
           </argument>
@@ -116,7 +124,10 @@ for(i = 0; i &lt;8; i+= 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = point_direction(x, y, obj_Player2.x, obj_Player2.y) + 90;
+            <string>if(right == 1)
+{image_angle = point_direction(x, y, obj_Player2.x, obj_Player2.y) + 90;}
+else
+{image_angle = point_direction(x, y, obj_Player1.x, obj_Player1.y) + 90;}
 
 if(HP &lt;= 0) instance_destroy();
 

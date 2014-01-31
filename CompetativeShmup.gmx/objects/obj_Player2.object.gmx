@@ -25,10 +25,170 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>moveLock2 = 0;
-invulnerable2 = 0;
+            <string>moveLock1 = 0;
+invulnerable1 = 0;
+powerLevel = 1;
+
+meter = 300;
+charge = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*******************************************************
+Alarm 3 corresponds to the players Level 2 charge attack
+*********************************************************/
+
+tempSpawn = instance_create(120, 50, obj_DroneLevel3);
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*******************************************************
+Alarm 3 corresponds to the players Level 2 charge attack
+*********************************************************/
+
+tempSpawn = instance_create(120, (100+irandom(200)), obj_DroneLevel2);
+
+tempSpawn2 = instance_create(580, 250+irandom(200), obj_DroneLevel2);
+tempSpawn2.mirror = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*******************************************************
+Alarm 2 corresponds to the players Level 1 charge attack
+*********************************************************/
+
+n = irandom(1);
+
+if(n==0)
+{tempSpawn = instance_create(120, 10, obj_DroneLevel1);}
+else
+{
+    tempSpawn = instance_create(580, 10, obj_DroneLevel1);
+    tempSpawn.mirror = 1;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*******************************************************
+Alarm 1 corresponds to the players basic attack. Each choice
+of SHIP_TYPE has a different basic attack that is unleashed
+on the enemy screen. These are primarily handled through
+helper objects, located in Objects-&gt;Player Attacks. This
+alarm is called when certain enemy units are killed.
+*********************************************************/
+
+if(PLAYER2_SHIP_TYPE = 1)
+{
+   tempx = (random(416) + 124);
+   tempSpawn = instance_create(tempx, 20, obj_DroneBasic);
+}
+else if(PLAYER2_SHIP_TYPE == 2)
+{
+
+}
+else if(PLAYER2_SHIP_TYPE = 3)
+{
+    
+}
+else if(PLAYER2_SHIP_TYPE = 4)
+{
+    
+}
+else if(PLAYER2_SHIP_TYPE = 5)
+{
+    
+}
+else if(PLAYER2_SHIP_TYPE = 6)
+{
+    
+}
+else if(PLAYER2_SHIP_TYPE = 7)
+{
+    
+}
+else if(PLAYER2_SHIP_TYPE = 8)
+{
+    
+}
 </string>
           </argument>
         </arguments>
@@ -51,11 +211,84 @@ invulnerable2 = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>leftStream = instance_create(x+7, y-16, obj_P2Bullet1);
-rightStream = instance_create(x-7, y-16, obj_P2Bullet1);
-
-leftStream.direction = 90;
-rightStream.direction = 90;
+            <string>/*******************************************************
+Alarm 0 corresponds to the players basic shot. The three
+different choices of WEAPON_TYPE each have five levels of 
+power increase. 
+*********************************************************/
+if(PLAYER2_WEAPON_TYPE = "direct")
+{
+    if (powerLevel = 1)
+    {
+        leftStream = instance_create(x+7, y-16, obj_P2Bullet1);
+        rightStream = instance_create(x-7, y-16, obj_P2Bullet1);
+        leftStream.direction = 90;
+        rightStream.direction = 90;
+    }
+    else if(powerLevel = 2)
+    {
+    
+    }
+    else if(powerLevel = 3)
+    {
+    
+    }
+    else if(powerLevel = 4)
+    {
+    
+    }
+    else if(powerLevel = 5)
+    {
+    
+    }
+    
+    }
+else if(PLAYER2_WEAPON_TYPE = "spread")
+{
+    if (powerLevel = 1)
+    {
+    
+    }
+    else if(powerLevel = 2)
+    {
+    
+    }
+    else if(powerLevel = 3)
+    {
+    
+    }
+    else if(powerLevel = 4)
+    {
+    
+    }
+    else if(powerLevel = 5)
+    {
+    
+    }
+}
+else if(PLAYER2_WEAPON_TYPE = "homing")
+{
+    if (powerLevel = 1)
+    {
+    
+    }
+    else if(powerLevel = 2)
+    {
+    
+    }
+    else if(powerLevel = 3)
+    {
+    
+    }
+    else if(powerLevel = 4)
+    {
+    
+    }
+    else if(powerLevel = 5)
+    {
+    
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -78,19 +311,20 @@ rightStream.direction = 90;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//-------------------------------------------------------------------
-// Code handling standardized diagonal movement
-//-------------------------------------------------------------------
-if(moveLock2 == 0)
+            <string>/*******************************************************
+The following code block handles standardized diagonal 
+player movement. It creates a movement string based on 
+what directional inputs are detected, then if the player
+is moving diagonally it adjusts the speed accordingly.
+*********************************************************/
+if(moveLock1 == 0)
 {
-
     LR = 0;
     UD = 0;
     
-    if (keyboard_check(vk_left)) LR = "L";
+    if (keyboard_check(vk_left)) LR = "L"; 
     else if (keyboard_check(vk_right)) LR = "R";
-    
+ 
     if (keyboard_check(vk_up)) UD = "U";
     else if (keyboard_check(vk_down)) UD = "D";    
     
@@ -109,99 +343,102 @@ if(moveLock2 == 0)
         case "RD": x += DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
         }
         
-/*
-    LR = 0;
-    UD = 0;
-    
-    if (joystick_direction(1) == vk_numpad4) LR = "L";
-    else if (joystick_direction(1) == vk_numpad6) LR = "R";
-    
-    if (joystick_direction(1) == vk_numpad8) UD = "U";
-    else if (joystick_direction(1) == vk_numpad2) UD = "D";    
-    
-    switch (string(LR)+string(UD))
-        {
-        case "00": break;
-        
-        case "L0": x -= PLAYER1_SPEED; break;
-        case "R0": x += PLAYER1_SPEED; break;
-        case "0U": y -= PLAYER1_SPEED; break;
-        case "0D": y += PLAYER1_SPEED; break;
-        
-        case "LU": x -= DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-        case "RU": x += DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-        case "LD": x -= DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
-        case "RD": x += DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
-        }
-       */ 
-       switch (joystick_direction(2))
+       /*switch (joystick_direction(1))
        {
            case vk_numpad1: x -= DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
-           case vk_numpad2: y += PLAYER2_SPEED; break;
+           case vk_numpad2: y += PLAYER1_SPEED; break;
            case vk_numpad3: x += DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
-           case vk_numpad4: x -= PLAYER2_SPEED; break;
-           case vk_numpad6: x += PLAYER2_SPEED; break;
+           case vk_numpad4: x -= PLAYER1_SPEED; break;
+           case vk_numpad6: x += PLAYER1_SPEED; break;
            case vk_numpad7: x -= DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-           case vk_numpad8: y -= PLAYER2_SPEED; break;
+           case vk_numpad8: y -= PLAYER1_SPEED; break;
            case vk_numpad9: x += DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-       } 
+       } */
 }
-//-------------------------------------------------------------------
-//Code handling boundary detection
-//-------------------------------------------------------------------
-    
-  x = min(x, room_width - 116);
-  x = max(x, 696);
-  y = min(y, room_height - 16);
-  y = max(y, 16);
-  
-//-------------------------------------------------------------------
-//Code handling hit detection with damaging objects
-//-------------------------------------------------------------------
 
+/*******************************************************
+This is the code that handles boundary detection with the
+edges of the versus screen. If the player objects attempts
+to move outside of bounds, it is set back in bounds instantly.
+*********************************************************/
+  
+  x = min(x, room_width - 100);  //Right Boundary
+  x = max(x, 680);               //Left Boundary
+  y = min(y, room_height);       //Bottom Boundary
+  y = max(y, 0);                //Top Boundary
+  
+/*******************************************************
+This code is used to detect and handle hit detection with 
+enemy bullet objects.
+*********************************************************/
 /*
-if (invulnerable2 == 0) 
+if (invulnerable1 == 0) 
 {
 
     hitObj = instance_place(x, y, obj_EnemyBulletParent);
     
     if(hitObj != noone) 
     {
-        //CALL DAMAGE TO PLAYER HP RIGHT HERE-------------------------------------------------------
-        //Code (probably script call) to be put here handling death animation etc.. before respawning
+        PLAYER1_HP -= 1;
         with (hitObj) instance_destroy();
         instance_destroy();
     }
-    
+  
 
 } //End of invulnerability if statement
-
 */
+/*******************************************************
+This code handles player death
+*********************************************************/
+if(PLAYER1_HP &lt;= 0)
+{
+    //CALL SCRIPT FOR DEATH
+}
 
+/*******************************************************
+This code handles capping the meter variable at 300
+*********************************************************/
+if(meter &gt; 300)
+{meter = 300;}
 
+/*******************************************************
+The following code block handles the charge meter. Each
+if block represents a different level of charge. Animations
+for the charge attacks being unleashed should be called 
+here.
+*********************************************************/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if keyboard_check(vk_shift)
+{
+    if charge&lt;meter
+    {charge+=1;}
+}
+     
+if keyboard_check_released(vk_shift)
+{
+  if(charge == 300)
+  {alarm[4] = 10;
+    meter = meter - 300;}
+  else if(charge&gt;=200)
+  {alarm[3] = 10;
+    meter = meter-200;}
+  else if(charge&gt;=100)
+  {alarm[2] = 10;
+    meter = meter-100;}
+  else
+  {
+    
+  }
+  
+  charge = 0;
+  
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="16">
+    <event eventtype="5" enumb="90">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -218,12 +455,197 @@ if (invulnerable2 == 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(moveLock2 == 0)
+            <string>/*******************************************************
+Holding down the shift key will cause the players basic
+shot to reset to PLAYER1_SHOTSPEED continuously.
+*********************************************************/
+if(moveLock1 == 0)
 {
-   if(alarm[0] = -1) alarm[0] = PLAYER2_SHOTSPEED;   //Basic shot alarm
-   // if(alarm[1] = -1) alarm[1] = PLAYER1_SHOTSPEED - PLAYER1_WAVESHOTSPEED; //Wave Shot Alarm
+   if(alarm[0] = -1) alarm[0] = PLAYER1_SHOTSPEED;   //Basic shot alarm
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*******************************************************
+The chosen SHIP_TYPE will determine what sprite needs to 
+be drawn for the player.
+*********************************************************/
+
+if(PLAYER2_SHIP_TYPE == 1)
+{
+     if (keyboard_check(vk_left))
+     {
+        draw_sprite_ext(spr_droneAnimLeft, 0, x, y, 1, 1, image_angle, c_white, 1);
+     }
+     else if (keyboard_check(vk_right))
+     {
+        draw_sprite_ext(spr_droneAnimRight, 0, x, y, 1, 1, image_angle, c_white, 1);
+     }
+     else
+     {
+        draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, 1);
+     }
+ }
+else if(PLAYER2_SHIP_TYPE == 2)
+{
+ draw_sprite_ext(spr_PlayerHolder, 0, x, y, 1, 1, image_angle, c_white, 1)
+}
+else if(PLAYER2_SHIP_TYPE = 3)
+{
+
+}
+else if(PLAYER2_SHIP_TYPE = 4)
+{
+
+}
+else if(PLAYER2_SHIP_TYPE = 5)
+{
+
+}
+else if(PLAYER2_SHIP_TYPE = 6)
+{
+
+}
+else if(PLAYER2_SHIP_TYPE = 7)
+{
+
+}
+else if(PLAYER2_SHIP_TYPE = 8)
+{
+
+}
+
+if keyboard_check(vk_shift)
+{
+    if(charge &lt; 10)
+    {chargeVal = "00" + string(round(charge));}
+    else if(charge &lt; 100)
+    {chargeVal = "0" + string(round(charge));}
+    else
+    {chargeVal = string(round(charge));}
+    
+    if(meter &lt; 10)
+    {meterVal = "00" + string(round(meter));}
+    else if(meter &lt; 100)
+    {meterVal = "0" + string(round(meter));}
+    else
+    {meterVal = string(round(meter));}
+    
+    chargeDraw = chargeVal + '/' + meterVal;
+    draw_text(x-37, y-50, chargeDraw);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="87">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[2] = 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[4] = 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[1] = 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="69">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[3] = 10;
 </string>
           </argument>
         </arguments>

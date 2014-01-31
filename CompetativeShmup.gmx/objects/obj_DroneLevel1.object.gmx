@@ -82,10 +82,13 @@ else
 for(i = 0; i &lt;7; i+= 1)
 {
     shot = instance_create(x, y, obj_mediumBullet1);
-    shot.right = 1;
     shot.speed = 2;
     shot.direction = dir;
     dir = dir-10;
+    
+    if(right == 1)
+    {shot.right = 1;}
+
 }
 
 </string>
@@ -118,10 +121,12 @@ else
 for(i = 0; i &lt;8; i+= 1)
 {
     shot = instance_create(x, y, obj_largeBullet1);
-    shot.right = 1;
     shot.speed = 2;
     shot.direction = dir;
     dir = dir-10;
+    
+    if(right == 1)
+    {shot.right = 1;}
 }
 
 </string>

@@ -58,11 +58,15 @@ alarm[0] = 240;
             <string>helper1 = instance_create(x+75, y-50, obj_DroneLevel3Helper1);
 helper2 = instance_create(x+75, y-50, obj_DroneLevel3Helper2);
 helper3 = instance_create(x-225, y+100, obj_DroneLevel3Helper3);
-helper1.right = 1;
-helper2.right = 1;
-helper3.right = 1;
 
 helper3.xx = x;
+
+if(right == 1)
+{
+    helper1.right = 1;
+    helper2.right = 1;
+    helper3.right = 1;
+}
 </string>
           </argument>
         </arguments>

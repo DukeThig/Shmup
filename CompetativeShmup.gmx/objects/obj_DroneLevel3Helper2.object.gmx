@@ -111,10 +111,20 @@ burstCount = 0;
             <kind>1</kind>
             <string>shot = instance_create(x+7, y+15, obj_smallBullet1);
 shot.direction = point_direction(x, y, obj_Player2.x, obj_Player2.y)+ (random(40)- 20);
-image_angle = shot.direction + 90;
-shot.right = 1;
 shot.speed = 3;
 burstCount = burstCount + 1;
+
+if(right == 1)
+{
+    shot.right = 1;
+    shot.direction = point_direction(x, y, obj_Player2.x, obj_Player2.y)+ (random(40)- 20);
+    image_angle = shot.direction + 90;
+}
+else
+{
+    shot.direction = point_direction(x, y, obj_Player1.x, obj_Player1.y)+ (random(40)- 20);
+    image_angle = shot.direction + 90;
+}
 </string>
           </argument>
         </arguments>

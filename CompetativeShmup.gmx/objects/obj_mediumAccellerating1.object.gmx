@@ -53,13 +53,13 @@ right = 0; //means on the left screen, 1 means on the right screen
 
 if(right == 0)
 {
-    if(x &gt;= room_width - 696) instance_destroy();
-    if(x &lt;= 116) instance_destroy();
+    if(x &gt;= room_width - (680-sprite_width)) instance_destroy();
+    if(x &lt;= (100-sprite_width)) instance_destroy();
 }
 else
 {
-    if(x &gt;= room_width - 116) instance_destroy();
-    if(x &lt;= 696) instance_destroy();
+    if(x &gt;= room_width - (100-sprite_width)) instance_destroy();
+    if(x &lt;= (680-sprite_width)) instance_destroy();
 }
 
 speed = speed +.01;

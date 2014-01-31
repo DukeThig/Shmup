@@ -50,6 +50,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_Test</background>
+    <background>background\bgr_testOverlay</background>
     <background>background\loadingScreen</background>
     <background>background\spaceStars</background>
   </backgrounds>

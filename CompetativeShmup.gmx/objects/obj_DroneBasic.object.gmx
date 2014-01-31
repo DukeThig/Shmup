@@ -121,7 +121,7 @@ shot3.direction = shot1.direction - 10;
             <string>shot = instance_create(x, y, obj_smallBullet1);
 shot.speed = 4;
 
-if(right = 0)
+if(right == 0)
 {
     shot.direction = point_direction(x, y, obj_Player1.x, obj_Player1.y)+ (random(60)- 30);
 }

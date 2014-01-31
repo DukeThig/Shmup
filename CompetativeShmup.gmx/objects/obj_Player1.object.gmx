@@ -160,39 +160,39 @@ helper objects, located in Objects-&gt;Player Attacks. This
 alarm is called when certain enemy units are killed.
 *********************************************************/
 
-if(SHIP_TYPE = 1)
+if(PLAYER1_SHIP_TYPE = 1)
 {
    tempx = (random(416) + 704);
    tempSpawn = instance_create(tempx, 20, obj_DroneBasic);
    tempSpawn.right = 1;
 }
-else if(SHIP_TYPE == 2)
+else if(PLAYER1_SHIP_TYPE == 2)
 {
    tempx = (random(416) + 704);
    tempSpawn = instance_create(tempx, 20, obj_DroneBasic);
    tempSpawn.right = 1;
 }
-else if(SHIP_TYPE = 3)
+else if(PLAYER1_SHIP_TYPE = 3)
 {
     
 }
-else if(SHIP_TYPE = 4)
+else if(PLAYER1_SHIP_TYPE = 4)
 {
     
 }
-else if(SHIP_TYPE = 5)
+else if(PLAYER1_SHIP_TYPE = 5)
 {
     
 }
-else if(SHIP_TYPE = 6)
+else if(PLAYER1_SHIP_TYPE = 6)
 {
     
 }
-else if(SHIP_TYPE = 7)
+else if(PLAYER1_SHIP_TYPE = 7)
 {
     
 }
-else if(SHIP_TYPE = 8)
+else if(PLAYER1_SHIP_TYPE = 8)
 {
     
 }
@@ -223,7 +223,7 @@ Alarm 0 corresponds to the players basic shot. The three
 different choices of WEAPON_TYPE each have five levels of 
 power increase. 
 *********************************************************/
-if(WEAPON_TYPE = "direct")
+if(PLAYER1_WEAPON_TYPE = "direct")
 {
     if (powerLevel = 1)
     {
@@ -250,7 +250,7 @@ if(WEAPON_TYPE = "direct")
     }
     
     }
-else if(WEAPON_TYPE = "spread")
+else if(PLAYER1_WEAPON_TYPE = "spread")
 {
     if (powerLevel = 1)
     {
@@ -273,7 +273,7 @@ else if(WEAPON_TYPE = "spread")
     
     }
 }
-else if(WEAPON_TYPE = "homing")
+else if(PLAYER1_WEAPON_TYPE = "homing")
 {
     if (powerLevel = 1)
     {
@@ -368,15 +368,21 @@ This is the code that handles boundary detection with the
 edges of the versus screen. If the player objects attempts
 to move outside of bounds, it is set back in bounds instantly.
 *********************************************************/
-  x = min(x, room_width - 696);
-  x = max(x, 116);
-  y = min(y, room_height - 16);
-  y = max(y, 16);
+ // x = min(x, room_width - 696);
+ // x = max(x, 116);
+ // y = min(y, room_height - 16);
+ // y = max(y, 16);
+  
+  x = min(x, room_width - 680);  //Right Boundary
+  x = max(x, 100);               //Left Boundary
+  y = min(y, room_height);       //Bottom Boundary
+  y = max(y, 0);                //Top Boundary
   
 /*******************************************************
 This code is used to detect and handle hit detection with 
 enemy bullet objects.
 *********************************************************/
+/*
 if (invulnerable1 == 0) 
 {
 
@@ -391,6 +397,7 @@ if (invulnerable1 == 0)
     
 
 } //End of invulnerability if statement
+*/
 
 /*******************************************************
 This code handles player death
@@ -496,7 +503,7 @@ The chosen SHIP_TYPE will determine what sprite needs to
 be drawn for the player.
 *********************************************************/
 
-if(SHIP_TYPE = 1)
+if(PLAYER1_SHIP_TYPE == 1)
 {
      if (keyboard_check(vk_left))
      {
@@ -511,31 +518,31 @@ if(SHIP_TYPE = 1)
         draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, 1);
      }
  }
-else if(SHIP_TYPE == 2)
+else if(PLAYER1_SHIP_TYPE == 2)
 {
  draw_sprite_ext(spr_PlayerHolder, 0, x, y, 1, 1, image_angle, c_white, 1)
 }
-else if(SHIP_TYPE = 3)
+else if(PLAYER1_SHIP_TYPE = 3)
 {
 
 }
-else if(SHIP_TYPE = 4)
+else if(PLAYER1_SHIP_TYPE = 4)
 {
 
 }
-else if(SHIP_TYPE = 5)
+else if(PLAYER1_SHIP_TYPE = 5)
 {
 
 }
-else if(SHIP_TYPE = 6)
+else if(PLAYER1_SHIP_TYPE = 6)
 {
 
 }
-else if(SHIP_TYPE = 7)
+else if(PLAYER1_SHIP_TYPE = 7)
 {
 
 }
-else if(SHIP_TYPE = 8)
+else if(PLAYER1_SHIP_TYPE = 8)
 {
 
 }
