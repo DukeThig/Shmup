@@ -47,6 +47,9 @@
       <sprite>sprites\spr_DroneBoss</sprite>
       <sprite>sprites\spr_DroneBosshelper</sprite>
     </sprites>
+    <sprites name="Utility">
+      <sprite>sprites\spr_Health</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_Test</background>
@@ -100,6 +103,7 @@
     </objects>
     <objects name="Utlity">
       <object>objects\waitTimer</object>
+      <object>objects\obj_GameStateHandler</object>
     </objects>
     <objects name="Player Attacks">
       <object>objects\obj_DroneBasic</object>
