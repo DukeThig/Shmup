@@ -29,8 +29,9 @@
 invulnerable1 = 0;
 powerLevel = 1;
 
-meter = 300;
-charge = 0;
+
+meter = 0; //meter corresponds to the amount of meter currently accumulated by the player
+charge = 0;  //charge is used to handle the amount of meter currently charged
 </string>
           </argument>
         </arguments>
@@ -87,12 +88,45 @@ tempSpawn.right = 1;
 Alarm 3 corresponds to the players Level 2 charge attack
 *********************************************************/
 
-tempSpawn = instance_create(700, (100+irandom(200)), obj_DroneLevel2);
-tempSpawn.right = 1;
-
-tempSpawn2 = instance_create(1160, 250+irandom(200), obj_DroneLevel2);
-tempSpawn2.right = 1;
-tempSpawn2.mirror = 1;
+if(PLAYER1_SHIP_TYPE = 1)
+{
+    tempSpawn = instance_create(700, (100+irandom(200)), obj_DroneLevel2);
+    tempSpawn.right = 1;
+    
+    tempSpawn2 = instance_create(1160, 250+irandom(200), obj_DroneLevel2);
+    tempSpawn2.right = 1;
+    tempSpawn2.mirror = 1;
+}
+else if(PLAYER1_SHIP_TYPE == 2)
+{
+   tempx = (random(356) + 734);
+   tempSpawn = instance_create(tempx, 5, obj_CommandoLevel2);
+   tempSpawn.right = 1;
+}
+else if(PLAYER1_SHIP_TYPE = 3)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 4)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 5)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 6)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 7)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 8)
+{
+    
+}
 </string>
           </argument>
         </arguments>
@@ -119,17 +153,50 @@ tempSpawn2.mirror = 1;
 Alarm 2 corresponds to the players Level 1 charge attack
 *********************************************************/
 
-n = irandom(1);
-
-if(n==0)
-{tempSpawn = instance_create(700, 10, obj_DroneLevel1);}
-else
+if(PLAYER1_SHIP_TYPE = 1)
 {
-    tempSpawn = instance_create(1160, 10, obj_DroneLevel1);
-    tempSpawn.mirror = 1;
-}
+    n = irandom(1);
 
-tempSpawn.right = 1;
+    if(n==0)
+    {tempSpawn = instance_create(700, 10, obj_DroneLevel1);}
+    else
+    {
+        tempSpawn = instance_create(1160, 10, obj_DroneLevel1);
+        tempSpawn.mirror = 1;
+    }
+    
+    tempSpawn.right = 1;
+}
+else if(PLAYER1_SHIP_TYPE == 2)
+{
+   tempx = (random(356) + 734);
+   tempSpawn = instance_create(tempx, 5, obj_CommandoLevel1);
+   tempSpawn.right = 1;
+}
+else if(PLAYER1_SHIP_TYPE = 3)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 4)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 5)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 6)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 7)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 8)
+{
+    
+}
 </string>
           </argument>
         </arguments>
@@ -168,8 +235,8 @@ if(PLAYER1_SHIP_TYPE = 1)
 }
 else if(PLAYER1_SHIP_TYPE == 2)
 {
-   tempx = (random(416) + 704);
-   tempSpawn = instance_create(tempx, 20, obj_DroneBasic);
+   tempx = 700;
+   tempSpawn = instance_create(tempx, 20, obj_CommandoBasic);
    tempSpawn.right = 1;
 }
 else if(PLAYER1_SHIP_TYPE = 3)
@@ -227,10 +294,12 @@ if(PLAYER1_WEAPON_TYPE = "direct")
 {
     if (powerLevel = 1)
     {
-        leftStream = instance_create(x+7, y-16, obj_P1Bullet1);
-        rightStream = instance_create(x-7, y-16, obj_P1Bullet1);
+        leftStream = instance_create(x+8, y-5, obj_P1Bullet1);
+        rightStream = instance_create(x-8, y-5, obj_P1Bullet1);
+        middleStream = instance_create(x, y-12, obj_P1Bullet1);
         leftStream.direction = 90;
         rightStream.direction = 90;
+        middleStream.direction = 90;
     }
     else if(powerLevel = 2)
     {
@@ -468,7 +537,7 @@ if keyboard_check_released(vk_shift)
           <argument>
             <kind>1</kind>
             <string>/*******************************************************
-Holding down the shift key will cause the players basic
+Holding down the z key will cause the players basic
 shot to reset to PLAYER1_SHOTSPEED continuously.
 *********************************************************/
 if(moveLock1 == 0)
@@ -506,21 +575,20 @@ be drawn for the player.
 if(PLAYER1_SHIP_TYPE == 1)
 {
      if (keyboard_check(vk_left))
-     {
-        draw_sprite_ext(spr_droneAnimLeft, 0, x, y, 1, 1, image_angle, c_white, 1);
-     }
+     {draw_sprite_ext(spr_droneAnimLeft, 0, x, y, 1, 1, image_angle, c_white, 1);}
      else if (keyboard_check(vk_right))
-     {
-        draw_sprite_ext(spr_droneAnimRight, 0, x, y, 1, 1, image_angle, c_white, 1);
-     }
+     {draw_sprite_ext(spr_droneAnimRight, 0, x, y, 1, 1, image_angle, c_white, 1);}
      else
-     {
-        draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, 1);
-     }
+     {draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, 1);}
  }
 else if(PLAYER1_SHIP_TYPE == 2)
 {
- draw_sprite_ext(spr_PlayerHolder, 0, x, y, 1, 1, image_angle, c_white, 1)
+     if (keyboard_check(vk_left))
+     {draw_sprite_ext(spr_droneAnimLeft, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     else if (keyboard_check(vk_right))
+     {draw_sprite_ext(spr_droneAnimRight, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     else
+     {draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, 1);}
 }
 else if(PLAYER1_SHIP_TYPE = 3)
 {
@@ -547,6 +615,12 @@ else if(PLAYER1_SHIP_TYPE = 8)
 
 }
 
+/*******************************************************
+While the player holds shift, the charge variable will 
+increase up to the value of the meter variable. When
+released, the appropriate alarm handling that level of
+attack will be called.
+*********************************************************/
 if keyboard_check(vk_shift)
 {
     if(charge &lt; 10)
@@ -588,7 +662,11 @@ if keyboard_check(vk_shift)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[2] = 10;
+            <string>/*******************************************************
+This press event is a debug only event, to be deleted.
+*********************************************************/
+
+alarm[2] = 10;
 </string>
           </argument>
         </arguments>
@@ -611,7 +689,11 @@ if keyboard_check(vk_shift)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[4] = 10;
+            <string>/*******************************************************
+This press event is a debug only event, to be deleted.
+*********************************************************/
+
+alarm[4] = 10;
 </string>
           </argument>
         </arguments>
@@ -634,7 +716,11 @@ if keyboard_check(vk_shift)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1] = 10;
+            <string>/*******************************************************
+This press event is a debug only event, to be deleted.
+*********************************************************/
+
+alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -657,7 +743,10 @@ if keyboard_check(vk_shift)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[3] = 10;
+            <string>/*******************************************************
+This press event is a debug only event, to be deleted.
+*********************************************************/
+alarm[3] = 10;
 </string>
           </argument>
         </arguments>
@@ -680,7 +769,11 @@ if keyboard_check(vk_shift)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>  PLAYER2_HP = PLAYER2_HP -1;
+            <string>/*******************************************************
+This press event is a debug only event, to be deleted.
+*********************************************************/
+  
+      PLAYER2_HP = PLAYER2_HP -1;
 </string>
           </argument>
         </arguments>
@@ -703,7 +796,11 @@ if keyboard_check(vk_shift)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>PLAYER1_HP = PLAYER1_HP -1;
+            <string>/*******************************************************
+This press event is a debug only event, to be deleted.
+*********************************************************/
+
+PLAYER1_HP = PLAYER1_HP -1;
 </string>
           </argument>
         </arguments>

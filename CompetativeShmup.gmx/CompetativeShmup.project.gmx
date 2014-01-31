@@ -60,6 +60,14 @@
   <paths name="paths">
     <path>paths\pth_DroneLevel3Helper1</path>
     <path>paths\pth_DroneLevel3Helper2</path>
+    <path>paths\pth_Pop1</path>
+    <path>paths\pth_Pop2</path>
+    <path>paths\pth_Pop3</path>
+    <path>paths\pth_Pop4</path>
+    <path>paths\pth_Pop5</path>
+    <path>paths\pth_Pop6</path>
+    <path>paths\pth_Pop7</path>
+    <path>paths\pth_Pop8</path>
   </paths>
   <scripts name="scripts">
     <scripts name="Save Data Management">
@@ -84,6 +92,7 @@
       <objects name="Enemy">
         <object>objects\obj_smallBullet1</object>
         <object>objects\obj_mediumAccellerating1</object>
+        <object>objects\obj_smallHoming</object>
         <object>objects\obj_smallBullet2</object>
         <object>objects\obj_smallBullet3</object>
         <object>objects\obj_smallBullet4</object>
@@ -99,7 +108,7 @@
     <objects name="Enemies">
       <object>objects\obj_EnemyParent</object>
       <object>objects\obj_EnemyPop1</object>
-      <object>objects\obj_EnemyAttackLauncher</object>
+      <object>objects\obj_EnemyPopLauncher1</object>
     </objects>
     <objects name="Utlity">
       <object>objects\waitTimer</object>
@@ -107,6 +116,9 @@
     </objects>
     <objects name="Player Attacks">
       <object>objects\obj_DroneBasic</object>
+      <object>objects\obj_CommandoLevel1</object>
+      <object>objects\obj_CommandoLevel2</object>
+      <object>objects\obj_CommandoBasic</object>
       <object>objects\obj_DroneLevel1</object>
       <object>objects\obj_DroneLevel2</object>
       <object>objects\obj_DroneLevel3</object>
@@ -122,6 +134,9 @@
       <object>objects\btn_exitStart</object>
     </objects>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tl_Versus1</timeline>
+  </timelines>
   <rooms name="rooms">
     <room>rooms\rm_pregameLoading</room>
     <room>rooms\rm_Menu</room>

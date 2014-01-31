@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>speed = 20;
+right = 0;
 </string>
           </argument>
         </arguments>
@@ -50,8 +51,16 @@
             <kind>1</kind>
             <string>image_angle = direction;
 
-if(x &gt;= room_width - 696) instance_destroy();
-if(x &lt;= 100) instance_destroy();
+if(right == 0)
+{
+    if(x &gt;= room_width - (680-sprite_width)) instance_destroy();
+    if(x &lt;= (100-sprite_width)) instance_destroy();
+}
+else
+{
+    if(x &gt;= room_width - (100-sprite_width)) instance_destroy();
+    if(x &lt;= (680-sprite_width)) instance_destroy();
+}
 </string>
           </argument>
         </arguments>
