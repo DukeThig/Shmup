@@ -15,6 +15,11 @@
         <sprite>sprites\spr_droneAnimLeft</sprite>
         <sprite>sprites\spr_droneAnimRight</sprite>
       </sprites>
+      <sprites name="Commando">
+        <sprite>sprites\spr_commando</sprite>
+        <sprite>sprites\spr_commando_Left</sprite>
+        <sprite>sprites\spr_commando_Right</sprite>
+      </sprites>
     </sprites>
     <sprites name="Projectiles">
       <sprite>sprites\spr_Bullet1</sprite>

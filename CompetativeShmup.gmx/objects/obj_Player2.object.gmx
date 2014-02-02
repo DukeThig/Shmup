@@ -507,7 +507,12 @@ if(PLAYER2_SHIP_TYPE == 1)
  }
 else if(PLAYER2_SHIP_TYPE == 2)
 {
- draw_sprite_ext(spr_PlayerHolder, 0, x, y, 1, 1, image_angle, c_white, 1)
+  if (keyboard_check(vk_left))
+     {draw_sprite_ext(spr_commando_Left, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     else if (keyboard_check(vk_right))
+     {draw_sprite_ext(spr_commando_Right, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     else
+     {draw_sprite_ext(spr_commando, 0, x, y, 1, 1, image_angle, c_white, 1);}
 }
 else if(PLAYER2_SHIP_TYPE = 3)
 {
