@@ -107,12 +107,12 @@ if(HP &lt;= 0)
     
     if(right == 0)
     {
-        obj_GameStateHandler.player1KillCount = obj_GameStateHandler.player1KillCount + 1;
+        obj_GameStateManager.player1KillCount = obj_GameStateManager.player1KillCount + 1;
         obj_Player1.meter = obj_Player1.meter + 5;
     }
     else
     {
-        obj_GameStateHandler.player2KillCount = obj_GameStateHandler.player2KillCount + 1;
+        obj_GameStateManager.player2KillCount = obj_GameStateManager.player2KillCount + 1;
         obj_Player2.meter = obj_Player2.meter + 5;
     }
     

@@ -92,22 +92,31 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(HP &lt;= 0)
+            <string>/*******************************************************
+Destroy obect if hp reaches zero and increment the kill 
+counter for that player.
+*********************************************************/
+
+if(HP &lt;= 0)
 {
     if(right == 0)
     {
-        obj_GameStateHandler.player1KillCount = obj_GameStateHandler.player1KillCount + 1;
+        obj_GameStateManager.player1KillCount = obj_GameStateManager.player1KillCount + 1;
         obj_Player1.meter = obj_Player1.meter + 5;
     }
     else
     {
-        obj_GameStateHandler.player2KillCount = obj_GameStateHandler.player2KillCount + 1;
+        obj_GameStateManager.player2KillCount = obj_GameStateManager.player2KillCount + 1;
         obj_Player2.meter = obj_Player2.meter + 5;
     }
     
     instance_destroy();
 }
 
+/*******************************************************
+Handle boundary detection based on which side of the screen
+the object is on (the status of the "right" variable.
+*********************************************************/
 if(right == 0)
 {
     if(x &gt;= room_width - (680-sprite_width)) instance_destroy();
@@ -121,6 +130,9 @@ else
 
 hitObj = instance_place(x, y, obj_PlayerBulletParent);
 
+/*******************************************************
+Check for and handle collision with player bullet objects
+*********************************************************/
 if(hitObj != noone) 
 {
      HP -= 1;

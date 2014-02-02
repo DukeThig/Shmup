@@ -37,6 +37,34 @@ charge = 0;  //charge is used to handle the amount of meter currently charged
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*******************************************************
+Alarm 9 is called to end a players invulnerable state 
+that is started upon getting hit.
+*********************************************************/
+
+invulnerable1  = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="4">
       <action>
         <libid>1</libid>
@@ -413,23 +441,23 @@ if(moveLock1 == 0)
         case "0U": y -= PLAYER1_SPEED; break;
         case "0D": y += PLAYER1_SPEED; break;
         
-        case "LU": x -= DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-        case "RU": x += DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-        case "LD": x -= DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
-        case "RD": x += DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
+        case "LU": x -= PLAYER1_DIAGONAL_SPEED; y -= PLAYER1_DIAGONAL_SPEED; break;
+        case "RU": x += PLAYER1_DIAGONAL_SPEED; y -= PLAYER1_DIAGONAL_SPEED; break;
+        case "LD": x -= PLAYER1_DIAGONAL_SPEED; y += PLAYER1_DIAGONAL_SPEED; break;
+        case "RD": x += PLAYER1_DIAGONAL_SPEED; y += PLAYER1_DIAGONAL_SPEED; break;
         }
         
-       /*switch (joystick_direction(1))
+       switch (joystick_direction(1))
        {
-           case vk_numpad1: x -= DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
+           case vk_numpad1: x -= PLAYER1_DIAGONAL_SPEED; y += PLAYER1_DIAGONAL_SPEED; break;
            case vk_numpad2: y += PLAYER1_SPEED; break;
-           case vk_numpad3: x += DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
+           case vk_numpad3: x += PLAYER1_DIAGONAL_SPEED; y += PLAYER1_DIAGONAL_SPEED; break;
            case vk_numpad4: x -= PLAYER1_SPEED; break;
            case vk_numpad6: x += PLAYER1_SPEED; break;
-           case vk_numpad7: x -= DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
+           case vk_numpad7: x -= PLAYER1_DIAGONAL_SPEED; y -= PLAYER1_DIAGONAL_SPEED; break;
            case vk_numpad8: y -= PLAYER1_SPEED; break;
-           case vk_numpad9: x += DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-       } */
+           case vk_numpad9: x += PLAYER1_DIAGONAL_SPEED; y -= PLAYER1_DIAGONAL_SPEED; break;
+       } 
 }
 
 /*******************************************************
@@ -437,11 +465,6 @@ This is the code that handles boundary detection with the
 edges of the versus screen. If the player objects attempts
 to move outside of bounds, it is set back in bounds instantly.
 *********************************************************/
- // x = min(x, room_width - 696);
- // x = max(x, 116);
- // y = min(y, room_height - 16);
- // y = max(y, 16);
-  
   x = min(x, room_width - 680);  //Right Boundary
   x = max(x, 100);               //Left Boundary
   y = min(y, room_height);       //Bottom Boundary
@@ -451,7 +474,7 @@ to move outside of bounds, it is set back in bounds instantly.
 This code is used to detect and handle hit detection with 
 enemy bullet objects.
 *********************************************************/
-/*
+
 if (invulnerable1 == 0) 
 {
 
@@ -461,12 +484,12 @@ if (invulnerable1 == 0)
     {
         PLAYER1_HP -= 1;
         with (hitObj) instance_destroy();
-        instance_destroy();
+        invulnerable1 = 1;
+        alarm[9] = 120;
     }
-    
 
 } //End of invulnerability if statement
-*/
+
 
 /*******************************************************
 This code handles player death
@@ -489,13 +512,13 @@ for the charge attacks being unleashed should be called
 here.
 *********************************************************/
 
-if keyboard_check(vk_shift)
+if (keyboard_check(vk_shift) or gamepad_button_check(0, gp_shoulderr))
 {
     if charge&lt;meter
     {charge+=1;}
 }
      
-if keyboard_check_released(vk_shift)
+if (keyboard_check_released(vk_shift)or gamepad_button_check_released(0, gp_shoulderr))
 {
   if(charge == 300)
   {alarm[4] = 10;
@@ -514,6 +537,27 @@ if keyboard_check_released(vk_shift)
   charge = 0;
   
 }
+
+/*******************************************************
+The following code block is for handling the throttle
+*********************************************************/
+if (keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(0, gp_shoulderl))
+{
+    PLAYER1_SPEED = PLAYER1_SPEED - 4;
+    PLAYER1_DIAGONAL_SPEED = PLAYER1_SPEED*.707;
+}
+
+if (keyboard_check_released(vk_space)or gamepad_button_check_released(0, gp_shoulderl))
+{
+    PLAYER1_SPEED = PLAYER1_SPEED + 4;
+    PLAYER1_DIAGONAL_SPEED = PLAYER1_SPEED*.707;
+}
+
+/*******************************************************
+The following code block is for handling controller inputs
+*********************************************************/
+if (gamepad_button_check(0, gp_face1))
+{event_perform(ev_keyboard, ord("Z"));}
 </string>
           </argument>
         </arguments>
@@ -572,23 +616,28 @@ The chosen SHIP_TYPE will determine what sprite needs to
 be drawn for the player.
 *********************************************************/
 
+//Change the transparency if invulnerable
+alpha = 1;
+if(invulnerable1 == 1)
+{alpha = .5;}
+
 if(PLAYER1_SHIP_TYPE == 1)
 {
      if (keyboard_check(vk_left))
-     {draw_sprite_ext(spr_droneAnimLeft, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_droneAnimLeft, 0, x, y, 1, 1, image_angle, c_white, alpha);}
      else if (keyboard_check(vk_right))
-     {draw_sprite_ext(spr_droneAnimRight, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_droneAnimRight, 0, x, y, 1, 1, image_angle, c_white, alpha);}
      else
-     {draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, alpha);}
  }
 else if(PLAYER1_SHIP_TYPE == 2)
 {
      if (keyboard_check(vk_left))
-     {draw_sprite_ext(spr_droneAnimLeft, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_droneAnimLeft, 0, x, y, 1, 1, image_angle, c_white, alpha);}
      else if (keyboard_check(vk_right))
-     {draw_sprite_ext(spr_droneAnimRight, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_droneAnimRight, 0, x, y, 1, 1, image_angle, c_white, alpha);}
      else
-     {draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, alpha);}
 }
 else if(PLAYER1_SHIP_TYPE = 3)
 {
@@ -615,13 +664,15 @@ else if(PLAYER1_SHIP_TYPE = 8)
 
 }
 
+alpha = 1; //Return the transparancy to default after changing it for invulnerable
+
 /*******************************************************
 While the player holds shift, the charge variable will 
 increase up to the value of the meter variable. When
 released, the appropriate alarm handling that level of
 attack will be called.
 *********************************************************/
-if keyboard_check(vk_shift)
+if (keyboard_check(vk_shift) or gamepad_button_check(0, gp_shoulderr))
 {
     if(charge &lt; 10)
     {chargeVal = "00" + string(round(charge));}

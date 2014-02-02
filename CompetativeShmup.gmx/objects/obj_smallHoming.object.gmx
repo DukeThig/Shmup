@@ -73,9 +73,9 @@ if(right == 1)
 else
 {
     if(x&gt;obj_Player1.x)
-    {hspeed = hspeed + .03;}
-    else
     {hspeed = hspeed - .03;}
+    else
+    {hspeed = hspeed + .03;}
 }
 
 </string>

@@ -26,11 +26,34 @@
           <argument>
             <kind>1</kind>
             <string>moveLock1 = 0;
-invulnerable1 = 0;
+invulnerable2 = 0;
 powerLevel = 1;
 
 meter = 0;
 charge = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>invulnerable2 = 0;
 </string>
           </argument>
         </arguments>
@@ -86,10 +109,42 @@ tempSpawn = instance_create(120, 50, obj_DroneLevel3);
 Alarm 3 corresponds to the players Level 2 charge attack
 *********************************************************/
 
-tempSpawn = instance_create(120, (100+irandom(200)), obj_DroneLevel2);
-
-tempSpawn2 = instance_create(580, 250+irandom(200), obj_DroneLevel2);
-tempSpawn2.mirror = 1;
+if(PLAYER1_SHIP_TYPE = 1)
+{
+    tempSpawn = instance_create(120, (100+irandom(200)), obj_DroneLevel2);
+    
+    tempSpawn2 = instance_create(580, 250+irandom(200), obj_DroneLevel2);
+    tempSpawn2.mirror = 1;
+}
+else if(PLAYER1_SHIP_TYPE == 2)
+{
+   tempx = (random(356) + 124);
+   tempSpawn = instance_create(tempx, 5, obj_CommandoLevel2);
+}
+else if(PLAYER1_SHIP_TYPE = 3)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 4)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 5)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 6)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 7)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 8)
+{
+    
+}
 </string>
           </argument>
         </arguments>
@@ -116,16 +171,47 @@ tempSpawn2.mirror = 1;
 Alarm 2 corresponds to the players Level 1 charge attack
 *********************************************************/
 
-n = irandom(1);
-
-if(n==0)
-{tempSpawn = instance_create(120, 10, obj_DroneLevel1);}
-else
+if(PLAYER1_SHIP_TYPE = 1)
 {
-    tempSpawn = instance_create(580, 10, obj_DroneLevel1);
-    tempSpawn.mirror = 1;
+    n = irandom(1);
+    
+    if(n==0)
+    {tempSpawn = instance_create(120, 10, obj_DroneLevel1);}
+    else
+    {
+        tempSpawn = instance_create(580, 10, obj_DroneLevel1);
+        tempSpawn.mirror = 1;
+    }
 }
-
+else if(PLAYER1_SHIP_TYPE == 2)
+{
+   tempx = (random(356) + 124);
+   tempSpawn = instance_create(tempx, 5, obj_CommandoLevel1);
+}
+else if(PLAYER1_SHIP_TYPE = 3)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 4)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 5)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 6)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 7)
+{
+    
+}
+else if(PLAYER1_SHIP_TYPE = 8)
+{
+    
+}
 </string>
           </argument>
         </arguments>
@@ -163,7 +249,8 @@ if(PLAYER2_SHIP_TYPE = 1)
 }
 else if(PLAYER2_SHIP_TYPE == 2)
 {
-
+   tempx = 120;
+   tempSpawn = instance_create(tempx, 20, obj_CommandoBasic);
 }
 else if(PLAYER2_SHIP_TYPE = 3)
 {
@@ -337,28 +424,28 @@ if(moveLock1 == 0)
         {
         case "00": break;
         
-        case "L0": x -= PLAYER1_SPEED; break;
-        case "R0": x += PLAYER1_SPEED; break;
-        case "0U": y -= PLAYER1_SPEED; break;
-        case "0D": y += PLAYER1_SPEED; break;
+        case "L0": x -= PLAYER2_SPEED; break;
+        case "R0": x += PLAYER2_SPEED; break;
+        case "0U": y -= PLAYER2_SPEED; break;
+        case "0D": y += PLAYER2_SPEED; break;
         
-        case "LU": x -= DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-        case "RU": x += DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-        case "LD": x -= DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
-        case "RD": x += DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
+        case "LU": x -= PLAYER2_DIAGONAL_SPEED; y -= PLAYER2_DIAGONAL_SPEED; break;
+        case "RU": x += PLAYER2_DIAGONAL_SPEED; y -= PLAYER2_DIAGONAL_SPEED; break;
+        case "LD": x -= PLAYER2_DIAGONAL_SPEED; y += PLAYER2_DIAGONAL_SPEED; break;
+        case "RD": x += PLAYER2_DIAGONAL_SPEED; y += PLAYER2_DIAGONAL_SPEED; break;
         }
         
-       /*switch (joystick_direction(1))
+       switch (joystick_direction(2))
        {
-           case vk_numpad1: x -= DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
-           case vk_numpad2: y += PLAYER1_SPEED; break;
-           case vk_numpad3: x += DIAGONAL_SPEED; y += DIAGONAL_SPEED; break;
-           case vk_numpad4: x -= PLAYER1_SPEED; break;
-           case vk_numpad6: x += PLAYER1_SPEED; break;
-           case vk_numpad7: x -= DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-           case vk_numpad8: y -= PLAYER1_SPEED; break;
-           case vk_numpad9: x += DIAGONAL_SPEED; y -= DIAGONAL_SPEED; break;
-       } */
+           case vk_numpad1: x -= PLAYER2_DIAGONAL_SPEED; y += PLAYER2_DIAGONAL_SPEED; break;
+           case vk_numpad2: y += PLAYER2_SPEED; break;
+           case vk_numpad3: x += PLAYER2_DIAGONAL_SPEED; y += PLAYER2_DIAGONAL_SPEED; break;
+           case vk_numpad4: x -= PLAYER2_SPEED; break;
+           case vk_numpad6: x += PLAYER2_SPEED; break;
+           case vk_numpad7: x -= PLAYER2_DIAGONAL_SPEED; y -= PLAYER2_DIAGONAL_SPEED; break;
+           case vk_numpad8: y -= PLAYER2_SPEED; break;
+           case vk_numpad9: x += PLAYER2_DIAGONAL_SPEED; y -= PLAYER2_DIAGONAL_SPEED; break;
+       } 
 }
 
 /*******************************************************
@@ -376,22 +463,20 @@ to move outside of bounds, it is set back in bounds instantly.
 This code is used to detect and handle hit detection with 
 enemy bullet objects.
 *********************************************************/
-/*
-if (invulnerable1 == 0) 
+if (invulnerable2 == 0) 
 {
 
     hitObj = instance_place(x, y, obj_EnemyBulletParent);
     
     if(hitObj != noone) 
     {
-        PLAYER1_HP -= 1;
+        PLAYER2_HP -= 1;
         with (hitObj) instance_destroy();
-        instance_destroy();
+        invulnerable2 = 1;
+        alarm[9] = 120;
     }
-  
+}//end of invulnerability if statement
 
-} //End of invulnerability if statement
-*/
 /*******************************************************
 This code handles player death
 *********************************************************/
@@ -407,19 +492,35 @@ if(meter &gt; 300)
 {meter = 300;}
 
 /*******************************************************
+The following code block is for handling the throttle
+*********************************************************/
+if (keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(1, gp_shoulderl))
+{
+    PLAYER2_SPEED = PLAYER2_SPEED - 4;
+    PLAYER2_DIAGONAL_SPEED = PLAYER2_SPEED*.707;
+}
+
+if (keyboard_check_released(vk_space)or gamepad_button_check_released(1, gp_shoulderl))
+{
+    PLAYER2_SPEED = PLAYER2_SPEED + 4;
+    PLAYER2_DIAGONAL_SPEED = PLAYER2_SPEED*.707;
+}
+
+
+/*******************************************************
 The following code block handles the charge meter. Each
 if block represents a different level of charge. Animations
 for the charge attacks being unleashed should be called 
 here.
 *********************************************************/
 
-if keyboard_check(vk_shift)
+if (keyboard_check(vk_shift) or gamepad_button_check(1, gp_shoulderr))
 {
     if charge&lt;meter
     {charge+=1;}
 }
      
-if keyboard_check_released(vk_shift)
+if (keyboard_check_released(vk_shift)or gamepad_button_check_released(0, gp_shoulderr))
 {
   if(charge == 300)
   {alarm[4] = 10;
@@ -496,23 +597,29 @@ The chosen SHIP_TYPE will determine what sprite needs to
 be drawn for the player.
 *********************************************************/
 
+//Change the transparency if invulnerable
+alpha = 1;
+if(invulnerable2 == 1)
+{alpha = .5;}
+
+
 if(PLAYER2_SHIP_TYPE == 1)
 {
      if (keyboard_check(vk_left))
-     {draw_sprite_ext(spr_droneAnimLeft, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_droneAnimLeft, 0, x, y, 1, 1, image_angle, c_white, alpha);}
      else if (keyboard_check(vk_right))
-     {draw_sprite_ext(spr_droneAnimRight, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_droneAnimRight, 0, x, y, 1, 1, image_angle, c_white, alpha);}
      else
-     {draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_drone, 0, x, y, 1, 1, image_angle, c_white, alpha);}
  }
 else if(PLAYER2_SHIP_TYPE == 2)
 {
   if (keyboard_check(vk_left))
-     {draw_sprite_ext(spr_commando_Left, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_commando_Left, 0, x, y, 1, 1, image_angle, c_white, alpha);}
      else if (keyboard_check(vk_right))
-     {draw_sprite_ext(spr_commando_Right, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_commando_Right, 0, x, y, 1, 1, image_angle, c_white, alpha);}
      else
-     {draw_sprite_ext(spr_commando, 0, x, y, 1, 1, image_angle, c_white, 1);}
+     {draw_sprite_ext(spr_commando, 0, x, y, 1, 1, image_angle, c_white, alpha);}
 }
 else if(PLAYER2_SHIP_TYPE = 3)
 {
@@ -539,7 +646,16 @@ else if(PLAYER2_SHIP_TYPE = 8)
 
 }
 
-if keyboard_check(vk_shift)
+alpha = 1; //Return the transparancy to default after changing it for invulnerable
+
+
+/*******************************************************
+While the player holds shift, the charge variable will 
+increase up to the value of the meter variable. When
+released, the appropriate alarm handling that level of
+attack will be called.
+*********************************************************/
+if (keyboard_check(vk_shift) or gamepad_button_check(1, gp_shoulderr))
 {
     if(charge &lt; 10)
     {chargeVal = "00" + string(round(charge));}

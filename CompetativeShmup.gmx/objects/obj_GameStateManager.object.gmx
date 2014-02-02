@@ -110,44 +110,70 @@ if(player2KillCount &gt;= 20)
     player2KillCount = 0;
 }
 
+
+
 /*******************************************************
 Check and manipulate the player win counts to handle
 game state.
 *********************************************************/
 if(PLAYER1_HP &lt;= 0)
 {
-    player2WinCount = player2WinCount + 1;
+    //PLAY ANIMATION FOR PLAYER 1 DYING RIGHT HERE
     fading = 1;
     room_fade+=0.02;
     
     if(room_fade &gt;= 1)
     {
         PLAYER1_HP = 10;
-        PLAYER22_HP = 10;
+        PLAYER2_HP = 10;
         room_goto(rm_Level1);
         timeline_position = 0;
+        player2WinCount = player2WinCount + 1;
         fading = 2;
     }
 }
 
 if(PLAYER2_HP &lt;= 0)
 {
-    player1WinCount = player1WinCount + 1;
+    //PLAY ANIMATION FOR PLAYER 2 DYING RIGHT HERE
+
     fading = 1;
     room_fade+=0.02;
     
     if(room_fade &gt;= 1)
     {
         PLAYER1_HP = 10;
-        PLAYER22_HP = 10;
+        PLAYER2_HP = 10;
         room_goto(rm_Level1);
         timeline_position = 0;
+        player1WinCount = player1WinCount + 1;
         fading = 2;
     }
 }
 
+/*******************************************************
+In the if block handling fading == 2 any code dealing with 
+a player winning the entire round needs to be called. Such
+as increasing win counts, or showing a victory screen etc..
+*********************************************************/
 if(fading == 2)
 {
+
+    if(player1WinCount == 2)
+    {
+        player1WinCount = 0;
+        player2WinCount = 0;
+        timeline_running = false;
+        room_goto(rm_Menu);
+    }
+    else if(player2WinCount == 2)
+    {
+        player1WinCount = 0;
+        player2WinCount = 0;
+        timeline_running = false;
+        room_goto(rm_Menu);
+    }
+
     room_fade = room_fade-.05;
     
     if(room_fade &lt;= 0)
@@ -182,27 +208,30 @@ if(fading == 2)
 The following code handles drawing the health bar at the
 top of the screen for both players. 
 *********************************************************/
-var i, xx, yy, xSpace;
-xx = 270;      //x position of the leftmost heart
-yy = 30;      //y position of the hearts
-xSpace = 40;  //spacing between hearts
-
-for(i=0; i &lt; (PLAYER1_HP/2); i+=1)
+if(room == rm_Level1)
 {
-    if((PLAYER1_HP mod 2 == 1) and (i == (floor(PLAYER1_HP/2) )))
-    {draw_sprite(spr_Health, 1, xx + xSpace * i, yy);}
-    else
-    {draw_sprite(spr_Health, 0, xx + xSpace * i, yy);}
+    var i, xx, yy, xSpace;
+    xx = 270;      //x position of the leftmost heart
+    yy = 30;      //y position of the hearts
+    xSpace = 40;  //spacing between hearts
     
-}
-
-for(i=0; i &lt; (PLAYER2_HP/2); i+=1)
-{
-    if((PLAYER2_HP mod 2 == 1) and (i == (floor(PLAYER2_HP/2) )))
-    {draw_sprite(spr_Health, 1, xx + 580 + xSpace * i, yy);}
-    else
-    {draw_sprite(spr_Health, 0, xx + 580 + xSpace * i, yy);}
+    for(i=0; i &lt; (PLAYER1_HP/2); i+=1)
+    {
+        if((PLAYER1_HP mod 2 == 1) and (i == (floor(PLAYER1_HP/2) )))
+        {draw_sprite(spr_Health, 1, xx + xSpace * i, yy);}
+        else
+        {draw_sprite(spr_Health, 0, xx + xSpace * i, yy);}
+        
+    }
     
+    for(i=0; i &lt; (PLAYER2_HP/2); i+=1)
+    {
+        if((PLAYER2_HP mod 2 == 1) and (i == (floor(PLAYER2_HP/2) )))
+        {draw_sprite(spr_Health, 1, xx + 580 + xSpace * i, yy);}
+        else
+        {draw_sprite(spr_Health, 0, xx + 580 + xSpace * i, yy);}
+        
+    }
 }
 
 /*******************************************************
@@ -213,7 +242,6 @@ transparency effects during gameplay.
 draw_set_alpha(room_fade);
 draw_rectangle(0,0,room_width,room_height,0);
 draw_set_alpha(1);
-
 </string>
           </argument>
         </arguments>

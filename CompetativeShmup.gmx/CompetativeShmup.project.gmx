@@ -117,7 +117,7 @@
     </objects>
     <objects name="Utlity">
       <object>objects\waitTimer</object>
-      <object>objects\obj_GameStateHandler</object>
+      <object>objects\obj_GameStateManager</object>
     </objects>
     <objects name="Player Attacks">
       <object>objects\obj_DroneBasic</object>
