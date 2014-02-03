@@ -61,6 +61,7 @@
     <background>background\bgr_testOverlay</background>
     <background>background\loadingScreen</background>
     <background>background\spaceStars</background>
+    <background>background\bgr_Planet</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_DroneLevel3Helper1</path>
