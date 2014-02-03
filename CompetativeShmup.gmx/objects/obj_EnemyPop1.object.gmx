@@ -54,7 +54,12 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(path == 0)
+            <string>/*******************************************************
+After being instantiated in a timeline, setting the instances
+path variable to diferent values will change the way it
+moves around the creen. 
+*********************************************************/
+if(path == 0)
 {path_start(pth_Pop1, 3, 0, false);}
 else if(path == 1)
 {path_start(pth_Pop2, 3, 0, false);}
@@ -101,11 +106,13 @@ if(HP &lt;= 0)
 {
     if(right == 0)
     {
+        obj_GameStateManager.player1BulletSpawn = obj_GameStateManager.player1BulletSpawn + 1;
         obj_GameStateManager.player1KillCount = obj_GameStateManager.player1KillCount + 1;
         obj_Player1.meter = obj_Player1.meter + 5;
     }
     else
     {
+        obj_GameStateManager.player2BulletSpawn = obj_GameStateManager.player2BulletSpawn + 1;
         obj_GameStateManager.player2KillCount = obj_GameStateManager.player2KillCount + 1;
         obj_Player2.meter = obj_Player2.meter + 5;
     }

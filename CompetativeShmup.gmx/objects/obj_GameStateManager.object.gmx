@@ -65,6 +65,9 @@ in the step event.
 player1KillCount = 0;
 player2KillCount = 0;
 
+player1BulletSpawn = 0;
+player2BulletSpawn = 0;
+
 player1WinCount = 0;
 player2WinCount = 0;
 
@@ -110,6 +113,28 @@ if(player2KillCount &gt;= 20)
     player2KillCount = 0;
 }
 
+/*******************************************************
+Check and manipulate the player kill counts to handle
+player bullet spawning
+*********************************************************/
+if(player1BulletSpawn &gt;= 1)
+{
+    bullet = instance_create(685+irandom(490), (10+irandom(350)), obj_smallBullet1);
+    bullet.speed = .5 + random(1);
+    bullet.direction = 250 + irandom(40);
+    bullet.right = 1;
+    
+    player1BulletSpawn = 0;
+}
+
+if(player2BulletSpawn &gt;= 1)
+{
+    bullet = instance_create(105+irandom(490), (10+irandom(350)), obj_smallBullet1);
+    bullet.speed = .5 + random(1);
+    bullet.direction = 250 + irandom(40);
+
+    player2BulletSpawn = 0;
+}
 
 
 /*******************************************************
