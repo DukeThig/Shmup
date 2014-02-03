@@ -257,6 +257,12 @@ if(room == rm_Level1)
         {draw_sprite(spr_Health, 0, xx + 580 + xSpace * i, yy);}
         
     }
+    
+    for(i=0; i &lt; (player1WinCount); i+=1)
+    {draw_sprite(spr_Health, 0, 580 - (xSpace) * i, yy);}
+    
+    for(i=0; i &lt; (player2WinCount); i+=1)
+    {draw_sprite(spr_Health, 0, 700 + (xSpace) * i, yy);}
 }
 
 /*******************************************************
