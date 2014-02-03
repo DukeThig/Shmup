@@ -59,8 +59,14 @@
   <backgrounds name="background">
     <background>background\bgr_Test</background>
     <background>background\bgr_testOverlay</background>
+    <background>background\bgr_TestingEditLayer1</background>
+    <background>background\bgr_TestingEditLayer2</background>
     <background>background\loadingScreen</background>
     <background>background\spaceStars</background>
+<<<<<<< HEAD
+=======
+    <background>background\bgr_Planet</background>
+>>>>>>> parent of 0f6c687... play area parallaxing
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_DroneLevel3Helper1</path>

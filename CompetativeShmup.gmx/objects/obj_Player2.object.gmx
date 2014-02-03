@@ -520,7 +520,7 @@ if (keyboard_check(vk_shift) or gamepad_button_check(1, gp_shoulderr))
     {charge+=1;}
 }
      
-if (keyboard_check_released(vk_shift)or gamepad_button_check_released(0, gp_shoulderr))
+if (keyboard_check_released(vk_shift)or gamepad_button_check_released(1, gp_shoulderr))
 {
   if(charge == 300)
   {alarm[4] = 10;
@@ -539,6 +539,12 @@ if (keyboard_check_released(vk_shift)or gamepad_button_check_released(0, gp_shou
   charge = 0;
   
 }
+
+/*******************************************************
+The following code block is for handling controller inputs
+*********************************************************/
+if (gamepad_button_check(1, gp_face1))
+{event_perform(ev_keyboard, ord("Z"));}
 </string>
           </argument>
         </arguments>
