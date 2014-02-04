@@ -24,6 +24,9 @@
     <sprites name="Projectiles">
       <sprite>sprites\spr_Bullet1</sprite>
       <sprite>sprites\spr_smallBullet1</sprite>
+      <sprite>sprites\spr_Testing</sprite>
+      <sprite>sprites\spr_Testing2</sprite>
+      <sprite>sprites\spr_Testing3</sprite>
       <sprite>sprites\spr_smallBullet2</sprite>
       <sprite>sprites\spr_smallBullet3</sprite>
       <sprite>sprites\spr_smallBullet4</sprite>
