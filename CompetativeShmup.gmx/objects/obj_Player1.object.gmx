@@ -618,6 +618,8 @@ be drawn for the player.
 
 //Change the transparency if invulnerable
 alpha = 1;
+draw_set_font(fnt_Pixel);
+
 if(invulnerable1 == 1)
 {alpha = .5;}
 

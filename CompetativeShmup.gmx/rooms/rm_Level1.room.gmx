@@ -30,12 +30,12 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="-1" name="bgr_testOverlay" x="0" y="0" htiled="0" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="-1" foreground="-1" name="bgr_TestingEditLayer1" x="0" y="0" htiled="0" vtiled="-1" hspeed="0" vspeed="5" stretch="0"/>
-    <background visible="-1" foreground="-1" name="bgr_TestingEditLayer2" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="3" stretch="0"/>
-    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="-1" name="" x="0" y="0" htiled="0" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bgr_base" x="0" y="0" htiled="0" vtiled="-1" hspeed="0" vspeed="1" stretch="0"/>
+    <background visible="-1" foreground="0" name="starsBase" x="0" y="0" htiled="0" vtiled="-1" hspeed="0" vspeed="4" stretch="0"/>
+    <background visible="-1" foreground="0" name="starsOver" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="8" stretch="0"/>
+    <background visible="-1" foreground="-1" name="bgr_starFog" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="15" stretch="0"/>
+    <background visible="-1" foreground="-1" name="bgr_testOverlay" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>

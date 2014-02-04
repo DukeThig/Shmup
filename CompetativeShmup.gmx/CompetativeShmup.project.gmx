@@ -69,7 +69,12 @@
     <background>background\bgr_TestingEditLayer2</background>
     <background>background\loadingScreen</background>
     <background>background\spaceStars</background>
-    <background>background\bgr_Planet</background>
+    <backgrounds name="Play Area">
+      <background>background\bgr_base</background>
+      <background>background\bgr_starFog</background>
+      <background>background\starsBase</background>
+      <background>background\starsOver</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_DroneLevel3Helper1</path>
@@ -89,6 +94,9 @@
       <script>scripts\scr_readProfile.gml</script>
     </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_Pixel</font>
+  </fonts>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_Player1</object>
