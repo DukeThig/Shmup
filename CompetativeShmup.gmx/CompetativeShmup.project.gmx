@@ -106,8 +106,6 @@
       <objects name="Enemy">
         <object>objects\obj_smallBullet1</object>
         <object>objects\obj_mediumAccellerating1</object>
-        <object>objects\obj_WaveBulletMedium</object>
-        <object>objects\obj_WaveBulletMediumGen</object>
         <object>objects\obj_smallHoming</object>
         <object>objects\obj_smallBullet2</object>
         <object>objects\obj_smallBullet3</object>
@@ -119,6 +117,10 @@
         <object>objects\obj_mediumBullet4</object>
         <object>objects\obj_mediumBullet5</object>
         <object>objects\obj_largeBullet1</object>
+        <objects name="Ultimate">
+          <object>objects\obj_WaveBulletMedium</object>
+          <object>objects\obj_WaveBulletMediumGen</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Enemies">

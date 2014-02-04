@@ -29,7 +29,34 @@
 right = 0; //means on the left screen, 1 means on the right screen
 accellerating = 1;
 toggle = 0;
+toggle2 = 0;
 dir = 0;
+alarm[1] = 600;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>speed = 2;
+direction = irandom(360);
+
 </string>
           </argument>
         </arguments>
@@ -65,30 +92,80 @@ else
     if(x &lt;= (680-sprite_width)) instance_destroy();
 }
 
-
-if(accellerating == 1)
-{speed = speed +.15;}
-else
-{speed = speed -.15;}
-
-if(speed &gt;= 4)
-{accellerating = 0;}
-
-if(speed &lt;= 0)
+if(toggle2 == 0)
 {
-    accellerating = 1;
-
-    if(toggle == 0)
+    if(right == 0)
     {
-        direction += 90;
-        toggle = 1;
+        if(PATTERN_TOGGLE1 == 0)
+        {
+            if(accellerating == 1)
+            {speed = speed +.15;}
+            else
+            {speed = speed -.15;}
+            
+            if(speed &gt;= 4)
+            {accellerating = 0;}
+            
+            if(speed &lt;= 0)
+            {
+                accellerating = 1;
+            
+                if(toggle == 0)
+                {
+                    direction += 90;
+                    toggle = 1;
+                }
+                else
+                {
+                    direction -= 90;
+                    toggle = 0;
+                }
+            }
+        }
+        else
+        {
+            speed = 0;
+            alarm[1] = 300;
+            toggle2 = 1;
+        }
     }
     else
     {
-        direction -= 90;
-        toggle = 0;
+        if(PATTERN_TOGGLE2 == 1)
+        {
+            if(accellerating == 1)
+            {speed = speed +.15;}
+            else
+            {speed = speed -.15;}
+            
+            if(speed &gt;= 4)
+            {accellerating = 0;}
+            
+            if(speed &lt;= 0)
+            {
+                accellerating = 1;
+            
+                if(toggle == 0)
+                {
+                    direction += 90;
+                    toggle = 1;
+                }
+                else
+                {
+                    direction -= 90;
+                    toggle = 0;
+                }
+            }
+        }
+        else
+        {
+            speed = 0;
+            alarm[1] = 300;
+            toggle2 = 1;
+        }
     }
 }
+
 </string>
           </argument>
         </arguments>
