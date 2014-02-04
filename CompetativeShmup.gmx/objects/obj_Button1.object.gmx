@@ -47,6 +47,10 @@ globalvar PLAYER2_ITEM_ONE;
 globalvar PLAYER2_ITEM_TWO;
 globalvar PLAYER2_DIAGONAL_SPEED;
 
+//Pattern assistance
+globalvar SHOT_TOGGLE1;
+globalvar SHOT_TOGGLE2;
+
 
 PLAYER1_SPEED = 7;
 PLAYER1_SHOTSPEED = 5;
@@ -61,7 +65,7 @@ PLAYER2_DIAGONAL_SPEED = PLAYER2_SPEED*.707;
 
 
 //Code below is intializing the player customization variables (choices in hangar)
-PLAYER1_SHIP_TYPE = 2;
+PLAYER1_SHIP_TYPE = 1;
 PLAYER1_WEAPON_TYPE = "direct";
 PLAYER1_HULL_TYPE = "mobile";
 PLAYER1_ITEM_ONE = 1;
@@ -73,6 +77,9 @@ PLAYER2_HULL_TYPE = "mobile";
 PLAYER2_ITEM_ONE = 1;
 PLAYER2_ITEM_TWO = 1;
 
+//Pattern assistance
+SHOT_TOGGLE1 = 0;
+SHOT_TOGGLE2 = 0;
 
 room_goto(rm_Level1);
 </string>

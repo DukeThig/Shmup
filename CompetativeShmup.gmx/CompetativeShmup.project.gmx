@@ -27,6 +27,9 @@
       <sprite>sprites\spr_Testing</sprite>
       <sprite>sprites\spr_Testing2</sprite>
       <sprite>sprites\spr_Testing3</sprite>
+      <sprite>sprites\sprite33</sprite>
+      <sprite>sprites\sprite34</sprite>
+      <sprite>sprites\sprite36</sprite>
       <sprite>sprites\spr_smallBullet2</sprite>
       <sprite>sprites\spr_smallBullet3</sprite>
       <sprite>sprites\spr_smallBullet4</sprite>
@@ -103,6 +106,8 @@
       <objects name="Enemy">
         <object>objects\obj_smallBullet1</object>
         <object>objects\obj_mediumAccellerating1</object>
+        <object>objects\obj_WaveBulletMedium</object>
+        <object>objects\obj_WaveBulletMediumGen</object>
         <object>objects\obj_smallHoming</object>
         <object>objects\obj_smallBullet2</object>
         <object>objects\obj_smallBullet3</object>
@@ -119,6 +124,7 @@
     <objects name="Enemies">
       <object>objects\obj_EnemyParent</object>
       <object>objects\obj_EnemyPop1</object>
+      <object>objects\obj_EnemyPatternGen</object>
       <object>objects\obj_EnemyPopLauncher1</object>
     </objects>
     <objects name="Utlity">
