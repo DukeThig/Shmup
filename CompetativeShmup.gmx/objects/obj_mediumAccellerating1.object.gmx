@@ -50,7 +50,7 @@ right = 0; //means on the left screen, 1 means on the right screen
           <argument>
             <kind>1</kind>
             <string>image_angle = direction;
-
+image_speed = .20;
 if(right == 0)
 {
     if(x &gt;= room_width - (680-sprite_width)) instance_destroy();

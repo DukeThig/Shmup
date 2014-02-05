@@ -19,6 +19,9 @@
         <sprite>sprites\spr_commando</sprite>
         <sprite>sprites\spr_commando_Left</sprite>
         <sprite>sprites\spr_commando_Right</sprite>
+        <sprites name="AttackSprites">
+          <sprite>sprites\spr_commandoMissle</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Projectiles">
@@ -40,6 +43,13 @@
       <sprite>sprites\spr_mediumBullet4</sprite>
       <sprite>sprites\spr_mediumBullet5</sprite>
       <sprite>sprites\spr_largeBullet1</sprite>
+      <sprite>sprites\spr_redSmallSpin</sprite>
+      <sprite>sprites\spr_yellowSmallSpin</sprite>
+      <sprite>sprites\spr_greenSmallSpin</sprite>
+      <sprite>sprites\spr_blueMediumCycle</sprite>
+      <sprite>sprites\spr_darkMediumSpin</sprite>
+      <sprite>sprites\spr_giantHellfireDeath</sprite>
+      <sprite>sprites\spr_blueSpike</sprite>
     </sprites>
     <sprites name="Enemy">
       <sprite>sprites\spr_Pop1</sprite>
